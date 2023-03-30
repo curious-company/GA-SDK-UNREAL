@@ -406,6 +406,7 @@ void FAnalyticsProviderGameAnalytics::EndSession()
         if(ProjectSettings.UseManualSessionHandling)
         {
             UGameAnalytics::endSession();
+            bHasSessionStarted = false;
         }
         else
         {
