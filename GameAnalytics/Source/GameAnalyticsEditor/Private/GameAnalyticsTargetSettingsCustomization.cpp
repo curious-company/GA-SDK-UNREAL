@@ -1069,7 +1069,7 @@ void FGameAnalyticsTargetSettingsCustomization::OnGameMenuItemClickedIos(FGameAn
 	UE_LOG(LogTemp, Warning, TEXT("Platform selected: iOS, Game Key Saved: %s"), *(FGameAnalyticsTargetSettingsCustomization::getInstance().SelectedGameIos.GameKey));
 	UE_LOG(LogTemp, Warning, TEXT("Saved at: %s"), *GetIniName());
 
-	GameAnalyticsProjectSettings->ReloadConfig(NULL, *GetIniName(), UE::ELoadConfigPropagationFlags(0), NULL);
+	GameAnalyticsProjectSettings->ReloadConfig(NULL, *GetIniName(), UE::LCPF_None, NULL);
 
 	SavedLayoutBuilder->ForceRefreshDetails();
 }
@@ -1105,7 +1105,7 @@ void FGameAnalyticsTargetSettingsCustomization::OnGameMenuItemClickedAndroid(FGa
 	UE_LOG(LogTemp, Warning, TEXT("Platform selected: Android, Game Key Saved: %s"), *(FGameAnalyticsTargetSettingsCustomization::getInstance().SelectedGameAndroid.GameKey));
 	UE_LOG(LogTemp, Warning, TEXT("Saved at: %s"), *GetIniName());
 
-	GameAnalyticsProjectSettings->ReloadConfig(NULL, *GetIniName(), UE::ELoadConfigPropagationFlags(0), NULL);
+	GameAnalyticsProjectSettings->ReloadConfig(NULL, *GetIniName(), UE::LCPF_None, NULL);
 
 	SavedLayoutBuilder->ForceRefreshDetails();
 }
@@ -1141,7 +1141,7 @@ void FGameAnalyticsTargetSettingsCustomization::OnGameMenuItemClickedMac(FGameAn
     UE_LOG(LogTemp, Warning, TEXT("Platform selected: Mac, Game Key Saved: %s"), *(FGameAnalyticsTargetSettingsCustomization::getInstance().SelectedGameMac.GameKey));
     UE_LOG(LogTemp, Warning, TEXT("Saved at: %s"), *GetIniName());
 
-    GameAnalyticsProjectSettings->ReloadConfig(NULL, *GetIniName(), UE::ELoadConfigPropagationFlags(0), NULL);
+    GameAnalyticsProjectSettings->ReloadConfig(NULL, *GetIniName(), UE::LCPF_None, NULL);
 
     SavedLayoutBuilder->ForceRefreshDetails();
 }
@@ -1177,7 +1177,7 @@ void FGameAnalyticsTargetSettingsCustomization::OnGameMenuItemClickedWindows(FGa
     UE_LOG(LogTemp, Warning, TEXT("Platform selected: Windows, Game Key Saved: %s"), *(FGameAnalyticsTargetSettingsCustomization::getInstance().SelectedGameWindows.GameKey));
     UE_LOG(LogTemp, Warning, TEXT("Saved at: %s"), *GetIniName());
 
-    GameAnalyticsProjectSettings->ReloadConfig(NULL, *GetIniName(), UE::ELoadConfigPropagationFlags(0), NULL);
+    GameAnalyticsProjectSettings->ReloadConfig(NULL, *GetIniName(), UE::LCPF_None, NULL);
 
     SavedLayoutBuilder->ForceRefreshDetails();
 }
@@ -1213,7 +1213,7 @@ void FGameAnalyticsTargetSettingsCustomization::OnGameMenuItemClickedLinux(FGame
     UE_LOG(LogTemp, Warning, TEXT("Platform selected: Linux, Game Key Saved: %s"), *(FGameAnalyticsTargetSettingsCustomization::getInstance().SelectedGameLinux.GameKey));
     UE_LOG(LogTemp, Warning, TEXT("Saved at: %s"), *GetIniName());
 
-    GameAnalyticsProjectSettings->ReloadConfig(NULL, *GetIniName(), UE::ELoadConfigPropagationFlags(0), NULL);
+    GameAnalyticsProjectSettings->ReloadConfig(NULL, *GetIniName(), UE::LCPF_None, NULL);
 
     SavedLayoutBuilder->ForceRefreshDetails();
 }
@@ -1249,7 +1249,7 @@ void FGameAnalyticsTargetSettingsCustomization::OnGameMenuItemClickedHtml5(FGame
     UE_LOG(LogTemp, Warning, TEXT("Platform selected: Html5, Game Key Saved: %s"), *(FGameAnalyticsTargetSettingsCustomization::getInstance().SelectedGameHtml5.GameKey));
     UE_LOG(LogTemp, Warning, TEXT("Saved at: %s"), *GetIniName());
 
-    GameAnalyticsProjectSettings->ReloadConfig(NULL, *GetIniName(), UE::ELoadConfigPropagationFlags(0), NULL);
+    GameAnalyticsProjectSettings->ReloadConfig(NULL, *GetIniName(), UE::LCPF_None, NULL);
 
     SavedLayoutBuilder->ForceRefreshDetails();
 }
@@ -1631,7 +1631,7 @@ void FGameAnalyticsTargetSettingsCustomization::UsernameEntered(const FText& New
 
             GConfig->Flush(false, GetIniName());
 
-            GameAnalyticsProjectSettings->ReloadConfig(NULL, *GetIniName(), UE::ELoadConfigPropagationFlags(0), NULL);
+            GameAnalyticsProjectSettings->ReloadConfig(NULL, *GetIniName(), UE::LCPF_None, NULL);
 		}
 	}
 }
